@@ -1,0 +1,3 @@
+mykidong.datasources.jdbc.hive.JdbcHiveRelationProvider
+mykidong.connector.hive.HiveRelationProvider
+
