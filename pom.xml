@@ -35,7 +35,7 @@
 		<hadoop.old.version.for.spark>2.7.0</hadoop.old.version.for.spark>
 
 		<!-- hive old version for spark 2.3.2 -->
-		<hive.old.version.for.spark>1.2.1</hive.old.version.for.spark>
+		<hive.old.version.for.spark>3.1.2</hive.old.version.for.spark>
 
 		<!-- mysql jdbc -->
 		<mysql-connector.version>5.1.33</mysql-connector.version>
