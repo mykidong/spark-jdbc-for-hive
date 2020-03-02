@@ -1,6 +1,7 @@
 package mykidong.datasources.jdbc.hive;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import mykidong.meta.HiveMetaResolver;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.rdd.RDD;

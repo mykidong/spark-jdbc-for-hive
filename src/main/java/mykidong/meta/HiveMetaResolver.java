@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package mykidong.datasources.jdbc.hive;
+package mykidong.meta;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.spark.sql.types.*;
