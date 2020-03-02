@@ -21,7 +21,7 @@ public class HiveJdbcDataSourceTestSkip {
             System.setProperty("hadoop.home.dir", "C:\\hadoop-home");
         }
 
-        SparkConf sparkConf = new SparkConf().setAppName("traverse schema");
+        SparkConf sparkConf = new SparkConf().setAppName("hive-jdbc");
         sparkConf.setMaster("local[2]");
 
         SparkSession spark = SparkSession
@@ -39,12 +39,12 @@ public class HiveJdbcDataSourceTestSkip {
         Dataset<Row> jdbcHiveDf = spark.read().format("jdbc-hive")
                 .option("dbTable", "mc.crawl_youtube")
                 .option("conditionClause", "where year = '2020' and month = '02' and day = '19'")
-                .option("hiveJdbcUrl", "jdbc:hive2://mc-d01.opasnet.io:10000")
-                .option("hiveJdbcUser", "hdfs")
-                .option("hiveJdbcPassword", "hdfspass")
-                .option("hiveMetastoreUrl", "jdbc:mysql://mc-d01.opasnet.io:3306/hive")
-                .option("hiveMetastoreUser", "hdfs")
-                .option("hiveMetastorePassword", "hdfspass")
+                .option("hiveJdbcUrl", "jdbc:hive2://mc-d01.mykidong.io:10000")
+                .option("hiveJdbcUser", "xxxx")
+                .option("hiveJdbcPassword", "xxxx")
+                .option("hiveMetastoreUrl", "jdbc:mysql://mc-d01.mykidong.io:3306/hive")
+                .option("hiveMetastoreUser", "xxxx")
+                .option("hiveMetastorePassword", "xxxx")
                 .option("fetchsize", "10")
                 .option("tempPath", "/jdbc-hive-temp")
                 .load();
