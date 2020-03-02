@@ -31,7 +31,6 @@
 		<!-- hadoop -->
 		<hadoop.version>3.1.1</hadoop.version>
 
-		<!-- hadoop old version for spark 2.3.2 -->
 		<hadoop.old.version.for.spark>2.7.0</hadoop.old.version.for.spark>
 
 		<!-- hive old version for spark 2.3.2 -->
@@ -160,6 +159,12 @@
 		<dependency>
 			<groupId>org.apache.hadoop</groupId>
 			<artifactId>hadoop-hdfs</artifactId>
+			<version>${hadoop.old.version.for.spark}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-common</artifactId>
 			<version>${hadoop.old.version.for.spark}</version>
 			<scope>provided</scope>
 		</dependency>
