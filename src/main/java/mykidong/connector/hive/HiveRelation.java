@@ -132,16 +132,6 @@ public class HiveRelation extends BaseRelation implements Serializable, TableSca
 
             // hive 가 저장한 path 에서 parquet file 을 읽음.
             df = sqlContext.read().format("parquet").load(outputPath);
-            StructType tempSchema = df.schema();
-
-            Iterator<StructField> iter = this.schema().iterator();
-
-            for(StructField field : tempSchema.fields())
-            {
-                String currentFieldName = field.name();
-                String newFieldName = iter.next().name();
-                df = df.withColumnRenamed(currentFieldName, newFieldName);
-            }
 
         } catch (Exception e)
         {
