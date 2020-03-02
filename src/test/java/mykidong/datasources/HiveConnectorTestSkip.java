@@ -37,12 +37,14 @@ public class HiveConnectorTestSkip {
         spark = SparkLoader.getSessionWithHadoopProperties(spark, hadoopProps);
 
         Dataset<Row> hiveDf = spark.read().format("hive-with-jdbc")
+
                 .option("hiveJdbcUrl", "jdbc:hive2://mc-d01.opasnet.io:10000")
                 .option("hiveJdbcUser", "hdfs")
                 .option("hiveJdbcPassword", "hdfspass")
                 .option("hiveMetastoreUrl", "jdbc:mysql://mc-d01.opasnet.io:3306/hive")
                 .option("hiveMetastoreUser", "hdfs")
                 .option("hiveMetastorePassword", "hdfspass")
+                .option("dbTable", "mc.crawl_youtube")
                 .option("query", "SELECT * FROM mc.crawl_youtube where year = '2020' and month = '02' and day = '19'")
                 .option("defaultFs", "")
                 .option("hadoopConfProperties", "hadoop-conf.properties")

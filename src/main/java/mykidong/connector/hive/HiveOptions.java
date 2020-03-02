@@ -2,6 +2,7 @@ package mykidong.connector.hive;
 
 public class HiveOptions {
 
+    public static final String dbTable = "dbTable";
     public static final String hiveJdbcUrl = "hiveJdbcUrl";
     public static final String hiveJdbcUser = "hiveJdbcUser";
     public static final String hiveJdbcPassword = "hiveJdbcPassword";
