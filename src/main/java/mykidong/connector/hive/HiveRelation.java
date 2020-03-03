@@ -92,10 +92,11 @@ public class HiveRelation extends BaseRelation implements Serializable, TableSca
     {
         buildSchema();
 
+        String dbTable = parametersAsJava.get(JdbcHiveOptions.dbTable);
         String hiveJdbcUrl = parametersAsJava.get(HiveOptions.hiveJdbcUrl);
         String hiveJdbcUser = parametersAsJava.get(HiveOptions.hiveJdbcUser);
         String hiveJdbcPassword = parametersAsJava.get(HiveOptions.hiveJdbcPassword);
-        String query = parametersAsJava.get(HiveOptions.query);
+        String conditionClause = parametersAsJava.get(JdbcHiveOptions.conditionClause);
         String defaultFs = parametersAsJava.get(HiveOptions.defaultFs);
         String hadoopConfProperties = parametersAsJava.get(HiveOptions.hadoopConfProperties);
         String outputPath = parametersAsJava.get(HiveOptions.outputPath);
@@ -104,7 +105,8 @@ public class HiveRelation extends BaseRelation implements Serializable, TableSca
         System.out.println("outputPath: [" + outputPath + "]");
 
         String sql = StringUtils.fileToString("/hive-template/hive-query.sql");
-        sql = sql.replaceAll("#query#", query);
+        sql = sql.replaceAll("#dbTable#", dbTable);
+        sql = sql.replaceAll("#conditionClause#", conditionClause);
         sql = sql.replaceAll("#outputPath#", outputPath);
         System.out.println("sql: [" + sql + "]");
         try {

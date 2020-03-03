@@ -1,3 +1,7 @@
 INSERT OVERWRITE DIRECTORY '#outputPath#'
 STORED AS PARQUET
-#query#
+select
+    *
+from
+    #dbTable#
+#conditionClause#
