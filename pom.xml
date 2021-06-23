@@ -49,7 +49,7 @@
 		<joor.version>0.9.12</joor.version>
 
 		<!-- jetty -->
-		<jetty.version>9.3.24.v20180605</jetty.version>
+		<jetty.version>9.4.41.v20210516</jetty.version>
 
 		<!-- plugin scala -->
 		<plugin.scala.version>2.15.2</plugin.scala.version>
