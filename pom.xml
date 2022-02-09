@@ -31,7 +31,7 @@
 		<!-- hadoop -->
 		<hadoop.version>3.1.1</hadoop.version>
 
-		<hadoop.old.version.for.spark>2.7.0</hadoop.old.version.for.spark>
+		<hadoop.old.version.for.spark>2.10.1</hadoop.old.version.for.spark>
 
 		<!-- hive old version for spark 2.3.2 -->
 		<hive.old.version.for.spark>1.2.1</hive.old.version.for.spark>
